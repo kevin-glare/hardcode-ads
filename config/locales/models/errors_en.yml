@@ -1,0 +1,10 @@
+en:
+  model:
+    errors:
+      ad:
+        title:
+          blank: 'The title cannot be blank'
+        description:
+          blank: 'The description cannot be blank'
+        city:
+          blank: 'The city cannot be blank'

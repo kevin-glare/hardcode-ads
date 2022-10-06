@@ -4,7 +4,7 @@ class Application < Sinatra::Base
   configure do
     register Sinatra::Namespace
 
-    set :app_file, File.expand_path('..', __dir__)
+    set :app_file, File.expand_path(__dir__)
   end
 
   configure :development do

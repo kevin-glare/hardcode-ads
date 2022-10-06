@@ -6,8 +6,7 @@ gem 'rake', '~> 13.0.6'
 
 gem 'falcon', '~> 0.42.3'
 
-gem 'db', '~> 0.10.3'
-gem 'db-postgres', '~> 0.7.0'
+gem 'pg', '~> 1.4.3'
 gem 'sequel', '~> 5.61.0'
 
 gem 'sinatra', '~> 3.0.2', require: 'sinatra/base'
