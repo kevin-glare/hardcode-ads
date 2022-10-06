@@ -7,7 +7,7 @@ module Validations
     result = validate_with(validation)
     raise InvalidParams if result.failure?
 
-    result.to_h
+    result
   end
 
   def validate_with(validation)
