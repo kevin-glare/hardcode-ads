@@ -11,6 +11,8 @@ gem 'sequel', '~> 5.61.0'
 
 gem 'sinatra', '~> 3.0.2', require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 3.0.2'
+gem 'rack-contrib', '~> 2.3.0'
+
 
 gem 'i18n', '~> 1.12.0'
 
@@ -22,6 +24,8 @@ gem 'dry-validation', '~> 1.8.1'
 gem 'dry-configurable', '~> 0.15.0'
 
 gem 'dotenv', '~> 2.8.1', groups: [:development, :test], require: 'dotenv/load'
+
+gem 'require_all'
 
 group :test do
   gem 'rspec', '~> 3.11.0'
