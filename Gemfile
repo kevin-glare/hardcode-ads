@@ -13,7 +13,6 @@ gem 'sinatra', '~> 3.0.2', require: 'sinatra/base'
 gem 'sinatra-contrib', '~> 3.0.2'
 gem 'rack-contrib', '~> 2.3.0'
 
-
 gem 'i18n', '~> 1.12.0'
 
 gem 'activesupport', '~> 7.0.4', require: false
@@ -24,8 +23,6 @@ gem 'dry-validation', '~> 1.8.1'
 gem 'dry-configurable', '~> 0.15.0'
 
 gem 'dotenv', '~> 2.8.1', groups: [:development, :test], require: 'dotenv/load'
-
-gem 'require_all'
 
 group :test do
   gem 'rspec', '~> 3.11.0'
