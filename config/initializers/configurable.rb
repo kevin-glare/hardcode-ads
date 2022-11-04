@@ -21,6 +21,8 @@ class Configurable
   setting :pagination do
     setting :page_size, default: 30
   end
+
+  setting :geocoder_url, default: ENV.fetch('GEOCODER_URL')
 end
 
 AppSetting = Configurable.config.freeze
