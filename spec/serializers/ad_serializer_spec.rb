@@ -1,5 +1,5 @@
 RSpec.describe AdSerializer do
-  subject { described_class.new([ad], links: links) }
+  subject { described_class.new([ad], links:) }
 
   let(:ad) { create(:ad) }
 
@@ -29,10 +29,10 @@ RSpec.describe AdSerializer do
         {
           id: ad.id.to_s,
           type: :ad,
-          attributes: attributes
+          attributes:
         }
       ],
-      links: links
+      links:
     )
   end
 end

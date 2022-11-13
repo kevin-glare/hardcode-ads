@@ -3,7 +3,7 @@ RSpec.describe AdRoutes, type: :routes do
     let(:user_id) { 101 }
 
     before do
-      create_list(:ad, 3, user_id: user_id)
+      create_list(:ad, 3, user_id:)
     end
 
     it 'returns a collection of ads' do
@@ -61,7 +61,7 @@ RSpec.describe AdRoutes, type: :routes do
       let(:last_ad) { Ad.last }
 
       it 'creates a new ad' do
-        expect { post '/api/v1/ads', ad: ad_params, user_id: user_id }
+        expect { post '/api/v1/ads', ad: ad_params, user_id: }
           .to change { Ad.count }.from(0).to(1)
 
         expect(last_response.status).to eq(201)

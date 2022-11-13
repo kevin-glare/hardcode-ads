@@ -1,6 +1,6 @@
 namespace :db do
   desc 'Run database migrations'
-  task :migrate, %i[version] => :configurable do |t, args|
+  task :migrate, %i[version] => :configurable do |_t, args|
     require 'sequel/core'
     Sequel.extension :migration
 
