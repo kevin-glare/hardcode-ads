@@ -22,7 +22,9 @@ class Configurable
     setting :page_size, default: 30
   end
 
-  setting :geocoder_url, default: ENV.fetch('GEOCODER_URL')
+  setting :rabbit_mq do
+    setting :consumer_pool, default: ENV.fetch('RABBIT_MQ_CONSUMER_POOL', 2)
+  end
 end
 
 AppSetting = Configurable.config.freeze

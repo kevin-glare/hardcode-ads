@@ -24,6 +24,8 @@ gem 'dry-validation', '~> 1.8.1'
 
 gem 'dotenv', '~> 2.8.1', groups: %i[development test], require: 'dotenv/load'
 
+gem 'bunny', '~> 2.19.0'
+
 group :test do
   gem 'database_cleaner-sequel', '~> 2.0.2'
   gem 'factory_bot', '~> 6.2.1'
