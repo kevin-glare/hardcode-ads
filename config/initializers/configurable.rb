@@ -3,6 +3,10 @@
 class Configurable
   extend Dry::Configurable
 
+  setting :app do
+    setting :name, default: 'ads'
+  end
+
   setting :i18n do
     setting :default_locale, default: :ru
     setting :available_locales, default: %i[en ru]

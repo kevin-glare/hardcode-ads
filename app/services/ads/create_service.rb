@@ -9,7 +9,7 @@ module Ads
     end
 
     option :user_id
-    option :geocoder_service, default: proc { GeocoderService::Rmq::Client.new }
+    option :geocoder_service, default: proc { GeocoderService::Rmq::Client.fetch }
 
     attr_reader :ad
 

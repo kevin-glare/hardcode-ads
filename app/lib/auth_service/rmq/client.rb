@@ -10,7 +10,7 @@ module AuthService
       include Api
       extend Dry::Initializer[undefined: false]
 
-      option :queue, default: proc { create_queque }
+      option :queue, default: proc { create_queue }
       option :reply_queue, default: proc { create_reply_queue }
       option :lock, default: proc { Mutex.new }
       option :condition, default: proc { ConditionVariable.new }
@@ -37,7 +37,7 @@ module AuthService
 
       attr_writer :correlation_id, :response
 
-      def create_queque
+      def create_queue
         channel = RabbitMq.channel
         channel.queue('authorization', durable: true)
       end
@@ -48,9 +48,9 @@ module AuthService
       end
 
       def publish(payload, opts = {})
-        @lock.synchronize do
-          self.correlation_id = SecureRandom.uuid
+        self.correlation_id = SecureRandom.uuid
 
+        @lock.synchronize do
           @queue.publish(
             payload,
             opts.merge(
