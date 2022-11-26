@@ -4,9 +4,9 @@ require 'json'
 
 channel = RabbitMq.consumer_channel
 exchange = channel.default_exchange
-queue = channel.queue('ads', durable: true)
+queue = channel.queue('ads_geocoder', durable: true)
 
-queue.subscribe do |delivery_info, properties, payload|
+queue.subscribe do |_delivery_info, properties, payload|
   payload = JSON(payload)
   puts payload if Application.environment == :development
 
