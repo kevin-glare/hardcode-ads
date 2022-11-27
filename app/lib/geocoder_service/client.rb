@@ -19,7 +19,10 @@ module GeocoderService
         payload, 
         opts.merge(
           persistent: true, 
-          app_id: 'ads'
+          app_id: AppSetting.app.name,
+          headers: {
+            request_id: Thread.current[:request_id]
+          }
         )
       )  
     end

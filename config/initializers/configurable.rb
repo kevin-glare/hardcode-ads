@@ -3,6 +3,10 @@
 class Configurable
   extend Dry::Configurable
 
+  setting :app do 
+    setting :name, default: 'ads'
+  end
+
   setting :i18n do
     setting :default_locale, default: :ru
     setting :available_locales, default: %i[en ru]
@@ -24,6 +28,11 @@ class Configurable
 
   setting :rabbit_mq do
     setting :consumer_pool, default: ENV.fetch('RABBIT_MQ_CONSUMER_POOL', 2)
+  end
+
+  setting :logger do
+    setting :path, default: 'log/app.log'
+    setting :level, default: 'info'
   end
 end
 

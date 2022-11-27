@@ -57,3 +57,6 @@ build-iPhoneSimulator/
 
 .env
 .idea/
+
+log/*
+!log/.keep
