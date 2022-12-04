@@ -11,6 +11,8 @@ Application.configure do |app|
     data[:request_id] ||= Thread.current[:request_id]
   end
 
+  logger.formatter = Ougai::Formatters::Readable.new if Application.environment == :development
+
   app.set :logger, logger
 end
 
