@@ -6,9 +6,9 @@ channel = RabbitMq.consumer_channel
 exchange = channel.default_exchange
 queue = channel.queue('ads_geocoder', durable: true)
 
-queue.subscribe do |_delivery_info, properties, payload|
+queue.subscribe(manual_ack: true) do |delivery_info, properties, payload|
   payload = JSON(payload)
-  puts payload if Application.environment == :development
+  Application.logger.info payload
 
   lat, lon = payload['coordinates']
 
@@ -19,4 +19,6 @@ queue.subscribe do |_delivery_info, properties, payload|
     routing_key: properties.reply_to,
     correlation_id: properties.correlation_id
   )
+
+  channel.ack(delivery_info.delivery_tag)
 end
